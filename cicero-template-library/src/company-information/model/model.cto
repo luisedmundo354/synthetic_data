@@ -1,0 +1,13 @@
+namespace org.accordproject.companyinformation
+
+import org.accordproject.contract.* from https://models.accordproject.org/accordproject/contract.cto
+import org.accordproject.runtime.* from https://models.accordproject.org/accordproject/runtime.cto
+import org.accordproject.address.PostalAddress from https://models.accordproject.org/address.cto
+
+asset CompanyInformation extends Clause {
+    o String name
+    o String industry
+    o String website
+    o PostalAddress address
+    o Integer numberOfEmployees
+}

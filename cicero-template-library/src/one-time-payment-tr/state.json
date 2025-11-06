@@ -1,0 +1,4 @@
+{
+    "$class": "org.accordproject.onetimepayment.OneTimePaymentState",
+    "status": "OBLIGATION_EMITTED"
+}

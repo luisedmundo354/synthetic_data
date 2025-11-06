@@ -1,0 +1,29 @@
+namespace org.accordproject.incorporation
+
+import org.accordproject.contract.* from https://models.accordproject.org/accordproject/contract.cto
+import org.accordproject.signature.ContractSigned from https://models.accordproject.org/signature/signature@0.2.0.cto
+
+asset IncorporationCertificate extends Contract {
+  o String companyName
+  o String incorporationState
+  o String streetAddress
+  o String addressRegion
+  o String addressLocality
+  o String postalCode
+  o String registeredAgentName
+  o DateTime incorporationDate
+  o Long authorizedShareCapital
+  o Double parValue
+  o String incorporatorName
+  o String incorporatorAddress
+  o String incorporatorCity
+  o String incorporatorState
+  o String incorporatorZip
+}
+
+event Contract {
+  o String companyName
+  o DateTime incorporationDate
+  o Long authorizedShareCapital
+  o Double parValue
+}

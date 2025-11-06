@@ -1,0 +1,20 @@
+{
+    "name": "signature-block-title-name-date",
+    "displayName": "Signature Block (Title, Name, Date)",
+    "version": "0.20.0",
+    "description": "A signature block with name, title, date input fields",
+    "author": "Accord Project",
+    "license": "Apache-2.0",
+    "accordproject": {
+        "template": "clause",
+        "cicero": "^0.22.0",
+        "runtime": "ergo"
+    },
+    "devDependencies": {
+        "cucumber": "^5.1.0"
+    },
+    "scripts": {
+        "test": "cucumber-js test -r .cucumber.js"
+    },
+    "keywords": ["signature-block"]
+}

@@ -1,0 +1,29 @@
+namespace org.accordproject.payment.fullupondemand
+
+import org.accordproject.contract.* from https://models.accordproject.org/accordproject/contract.cto
+import org.accordproject.party.* from https://models.accordproject.org/accordproject/party.cto
+import org.accordproject.runtime.* from https://models.accordproject.org/accordproject/runtime.cto
+import org.accordproject.obligation.* from https://models.accordproject.org/accordproject/obligation.cto
+import org.accordproject.money.MonetaryAmount from https://models.accordproject.org/money@0.2.0.cto
+import org.accordproject.payment.PaymentReceived from https://models.accordproject.org/payment/payment@0.2.0.cto
+
+// Template model
+asset FullPaymentUponDemandTemplate extends Contract {
+  --> Party buyer
+  --> Party seller
+  o MonetaryAmount value
+}
+
+// Request
+transaction PaymentDemand extends Request {
+}
+
+asset FullPaymentUponDemandState extends State {
+  o ContractLifecycleStatus status default = "INITIALIZED"
+}
+
+enum ContractLifecycleStatus {
+  o INITIALIZED
+  o OBLIGATION_EMITTED
+  o COMPLETED
+}

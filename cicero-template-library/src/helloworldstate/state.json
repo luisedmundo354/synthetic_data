@@ -1,0 +1,4 @@
+{
+    "$class": "org.accordproject.helloworldstate.HelloWorldState",
+		"counter" : 0
+}

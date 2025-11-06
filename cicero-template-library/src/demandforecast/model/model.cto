@@ -1,0 +1,36 @@
+namespace org.accordproject.demandforecast
+
+import org.accordproject.contract.* from https://models.accordproject.org/accordproject/contract.cto
+import org.accordproject.runtime.* from https://models.accordproject.org/accordproject/runtime.cto
+
+asset DemandForecastClause extends Clause {
+  o String purchaser
+  o String supplier 
+  o DateTime effectiveDate
+  o Double minimumPercentage
+}
+
+/**
+ * Defines the output data required by the template
+ */
+transaction ForecastRequest extends Request {
+/**
+ * How much is the forecast?
+ */
+  o Double supplyForecast
+}
+
+transaction BindingResponse extends Response {
+/**
+ * Amount must purchase.
+ */
+  o Double requiredPurchase
+/**
+ * Which year?
+ */
+  o Integer year
+/**
+ * Which quarter in this year?
+ */
+  o Integer quarter
+}

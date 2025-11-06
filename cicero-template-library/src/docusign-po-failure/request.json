@@ -1,0 +1,47 @@
+{
+    "$class": "com.docusign.connect.DocuSignEnvelopeInformation",
+    "envelopeStatus": {
+        "$class": "com.docusign.connect.EnvelopeStatus",
+        "status" : "Completed"
+    },
+    "recipients": [
+        {
+            "status": "Completed",
+            "email": "diana@clause.io",
+            "userName": "diana",
+            "tabStatuses": [
+                {
+                    "tabType": "Custom",
+                    "status": "Signed",
+                    "tabLabel": "currencyCode",
+                    "tabName": "",
+                    "customTabType": "Text",
+                    "tabValue": "USD",
+                    "originalValue": "",
+                    "$class": "com.docusign.connect.TextTabStatus"
+                },
+                {
+                    "tabType": "Custom",
+                    "status": "Signed",
+                    "tabLabel": "actualPrice",
+                    "tabName": "",
+                    "customTabType": "Number",
+                    "tabValue": 375.88,
+                    "originalValue": "",
+                    "$class": "com.docusign.connect.NumberTabStatus"
+                },
+                {
+                    "tabType": "Custom",
+                    "status": "Signed",
+                    "tabLabel": "deliveryDate",
+                    "tabName": "",
+                    "customTabType": "Date",
+                    "tabValue": "2019-03-25T00:00:00-07:00",
+                    "originalValue": "",
+                    "$class": "com.docusign.connect.DateTabStatus"
+                }
+            ],
+            "$class": "com.docusign.connect.Recipient"
+        }
+    ]
+}

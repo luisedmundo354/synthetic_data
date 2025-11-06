@@ -1,0 +1,19 @@
+{
+    "name": "payment-upon-iot",
+    "displayName": "Payment Upon IoT",
+    "version": "0.8.0",
+    "description": "This is a payment contract that pays out a fixed amount each time a button is pressed.",
+    "author": "Accord Project",
+    "license": "Apache-2.0",
+    "accordproject": {
+        "template": "contract",
+        "cicero": "^0.22.0"
+    },
+    "devDependencies": {
+        "cucumber": "^5.1.0"
+    },
+    "scripts": {
+        "test": "cucumber-js test -r .cucumber.js"
+    },
+    "keywords": ["payment", "pay", "upon", "iot", "button", "press", "long", "short", "complete", "double-press", "contract", "fixed", "amount"]
+}

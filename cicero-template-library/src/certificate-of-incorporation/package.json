@@ -1,0 +1,17 @@
+{
+    "name": "certificate-of-incorporation",
+    "version": "0.5.0",
+    "description": "This is a sample Certificate of Incorporation.",
+    "author": "Accord Project",
+    "license": "Apache-2.0",
+    "accordproject": {
+        "template": "contract",
+        "cicero": "^0.22.0"
+    },
+    "devDependencies": {
+        "cucumber": "^5.1.0"
+    },
+    "scripts": {
+        "test": "cucumber-js test -r .cucumber.js"
+    }
+}
