@@ -1,0 +1,19 @@
+{
+    "name": "forbearance_agreement",
+    "version": "0.0.0",
+    "description": "Name of the person to greet: \"Dan\".\nThank you!",
+    "author": "luis",
+    "accordproject": {
+        "template": "contract",
+        "cicero": "^0.24.0",
+        "runtime": "ergo"
+    },
+    "devDependencies": {
+        "cucumber": "^5.1.0",
+        "chai": "4.2.0",
+        "@accordproject/cicero-cli": "^0.24.0"
+    },
+    "scripts": {
+        "test": "cucumber-js test -r .cucumber.js"
+    }
+}

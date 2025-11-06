@@ -1,0 +1,4 @@
+{
+    "$class": "mycontract@1.0.0.MyRequest",
+    "input": "World"
+}

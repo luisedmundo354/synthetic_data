@@ -1,0 +1,10 @@
+{
+    "name": "second-amendment-assignment",
+    "version": "1.0.0",
+    "description": "Second Amendment and Assignment to Convertible Promissory Note",
+    "license": "Apache-2.0",
+    "accordproject": {
+        "template": "contract",
+        "cicero": "^0.24.0"
+    }
+}

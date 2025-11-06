@@ -1,0 +1,25 @@
+namespace secondamendment
+
+import org.accordproject.contract.* from https://models.accordproject.org/accordproject/contract.cto
+import org.accordproject.runtime.* from https://models.accordproject.org/accordproject/runtime.cto
+
+@template
+asset AmendmentContract extends Contract {
+  o DateTime effectiveDate
+  o String   borrowerName
+  o String   borrowerDBA optional
+  o String   lenderName
+  o String   assigneeName
+  o DateTime noteDate
+  o DateTime amendment1Date
+  o Double   principalAmount
+  o String   currency default="USD"
+  o DateTime newMaturityDate
+  o Double   newConversionPrice
+  o Double   conversionAmount
+}
+
+transaction ComputeSharesRequest extends Request {}
+transaction ComputeSharesResponse extends Response {
+  o Double shares
+}

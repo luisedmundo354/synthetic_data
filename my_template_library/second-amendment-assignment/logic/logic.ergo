@@ -1,0 +1,15 @@
+namespace secondamendment
+
+contract SecondAmendment over AmendmentContract {
+
+  clause ComputeShares(req : ComputeSharesRequest) : ComputeSharesResponse {
+    let price = contract.newConversionPrice;
+
+    enforce price > 0.0
+    else throw failure("newConversionPrice must be > 0");
+
+    let shares = contract.conversionAmount / price;
+
+    return ComputeSharesResponse{ shares: shares }
+  }
+}

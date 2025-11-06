@@ -1,0 +1,17 @@
+{
+  "$class": "secondamendment.AmendmentContract",
+  "effectiveDate": "2023-03-14T00:00:00.000-05:00",
+  "borrowerName": "Odyssey Group International, Inc.",
+  "borrowerDBA": "Odyssey Health, Inc.",
+  "lenderName": "Tysadco Partners, LLC",
+  "assigneeName": "ClearThink Capital Partners LLC",
+  "noteDate": "2021-08-29T00:00:00.000-05:00",
+  "amendment1Date": "2022-03-31T00:00:00.000-05:00",
+  "principalAmount": 275000,
+  "currency": "USD",
+  "newMaturityDate": "2023-12-31T00:00:00.000-05:00",
+  "newConversionPrice": 0.2,
+  "conversionAmount": 100000,
+  "contractId": "d7690a6c-555a-4c01-99ed-f3aa535a3bc1",
+  "$identifier": "d7690a6c-555a-4c01-99ed-f3aa535a3bc1"
+}
