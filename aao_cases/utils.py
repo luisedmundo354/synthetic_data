@@ -11,6 +11,10 @@ HeadingDetector = Callable[[str], bool]
 
 _SOFT_JOIN_NO_SPACE_PREFIX = {".", ",", ":", ";", "!", "?", ")", "]", "}", "%", "'", '"'}
 _WHITESPACE_RE = re.compile(r"\s+")
+_CASE_HEADING_PATTERN = re.compile(
+    r"(?<!\w)(?:(?P<roman>[IVXLCDM]+)\.\s*)?(?P<heading>LAW|ANALYSIS|ORDER)(?=\s*[:\n])",
+    flags=re.IGNORECASE,
+)
 
 
 def parse_pdf_to_text(pdf_path: PdfPath, heading_detector: Optional[HeadingDetector] = None) -> str:
@@ -160,4 +164,41 @@ def _default_heading_detector(line: str) -> bool:
     return False
 
 
-__all__ = ["parse_pdf_to_text", "HeadingDetector", "PdfPath"]
+def extract_case_sections(case_text: str) -> dict[str, str]:
+    """Return introduction, law, analysis, and order text segments."""
+    if not case_text or not case_text.strip():
+        raise ValueError("case_text must be a non-empty string")
+
+    sections: dict[str, str] = {
+        "introduction": "",
+        "law": "",
+        "analysis": "",
+        "order": "",
+    }
+
+    matches = [m for m in _CASE_HEADING_PATTERN.finditer(case_text)]
+    relevant = [m for m in matches if m.group("heading").upper() in {"LAW", "ANALYSIS", "ORDER"}]
+
+    if not relevant:
+        sections["introduction"] = case_text.strip()
+        return sections
+
+    law_match = next((m for m in relevant if m.group("heading").upper() == "LAW"), None)
+    first_span_start = (law_match or relevant[0]).start()
+    sections["introduction"] = case_text[:first_span_start].strip()
+
+    for idx, match in enumerate(relevant):
+        heading = match.group("heading").upper()
+        start = match.end()
+        end = relevant[idx + 1].start() if idx + 1 < len(relevant) else len(case_text)
+        chunk = case_text[start:end].lstrip(" \t\r\n:\u2028\u2029").rstrip()
+        key = heading.lower()
+        if sections[key]:
+            sections[key] = f"{sections[key]}\n\n{chunk}" if chunk else sections[key]
+        else:
+            sections[key] = chunk
+
+    return sections
+
+
+__all__ = ["parse_pdf_to_text", "HeadingDetector", "PdfPath", "extract_case_sections"]

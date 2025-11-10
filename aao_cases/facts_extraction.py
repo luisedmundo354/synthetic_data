@@ -24,13 +24,13 @@ class FactsExtractionConfig:
 
 
 _SYSTEM_PROMPT = (
-    "use the information under analysis, and under analyse only, to extract only the facts "
-    "and avoid including any application of the law. Make it a description of the facts "
-    "that I will use as an excecise to later analyze the case; this is why it should not "
-    "contain any application of the described rules or other rules or precedents that are "
-    "not extrictly facts of the case. This description of facts should be written in "
-    "natural language that is something that is coherent when reading. Not a list of facts "
+    "use this immigrations appeal case to extract only the facts related to the petitioner (not the analysis of the administrative appeals office)"
+    "and the reason of appealing. Avoid including any application of the law. Make it a description of only the facts and the reason of appealing. "
+    "It should not contain any analysis of the described rules or other rules or precedents that are "
+    "not strictly facts stated by the petitioner. This description of facts should be written in "
+    "natural language and coherent when reading. It shouldn't be only a list of facts "
     "but a description of the facts as if it where a human description of them."
+    "Avoid stating the conclusion of the case or what was resolved. The opinion and resolution of the administrative appeals office must not be included."
 )
 
 _USER_TEMPLATE = "Case text under analysis:\n{case_text}"  # newline keeps prompt readable
